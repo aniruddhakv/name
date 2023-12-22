@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Form</title>
+</head>
+<body>
+
+    <h1>Wasteless World</h1>
+
+    <form action="submit.php" method="post">
+        <fieldset>
+            <legend>Question 1:</legend>
+            <p>What kind of food is ready to donate?</p>
+            <label><input type="radio" name="q1" value="paris"> Veg</label>
+            <label><input type="radio" name="q1" value="london"> Non-Veg</label>
+            <label><input type="radio" name="q1" value="berlin"> Both Veg and Non-Veg</label>
+        </fieldset>
+
+        <title>Data Display based on Option</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="dataSelector">Select District:</label>
+        <select id="dataSelector" onchange="displayData()">
+            <option value="default" selected>Select an option</option>
+            <option value="data1">Bagalkot</option>
+            <option value="data2">Bellary</option>
+            <option value="data3">Bangalore Rural</option>
+            <option value="data4">Bangalore Urban</option>
+            <option value="data5">Belagavi</option>
+            <option value="data6">Bidar</option>
+            <option value="data7">Bijapur</option>
+            <option value="data8">Chamarajanagara</option>
+            <option value="data9">Chikkaballapura</option>
+            <option value="data10">Chikmagalur</option>
+            <option value="data11">Chitradurga</option>
+            <option value="data12">Dakshina Kannada</option>
+            <option value="data13">Davanagere</option>
+            <option value="data14">Dharwad</option>
+            <option value="data15">Gadag</option>
+            <option value="data16">Gulbarga</option>
+            <option value="data17">Hassan</option>
+            <option value="data18">Haveri</option>
+            <option value="data19">Kodagu</option>
+            <option value="data20">Kolar</option>
+            <option value="data21">Koppal</option>
+            <option value="data22">Mandya</option>
+            <option value="data23">Mysore</option>
+            <option value="data24">Raichur</option>
+            <option value="data25">Ramanagara</option>
+            <option value="data26">Shimoga</option>
+            <option value="data27">Tumakuru</option>
+            <option value="data28">Udupi</option>
+            <option value="data29">Uttara Kannada</option>
+            <option value="data30">Vijayanagara</option>
+            <option value="data31">Yadgiri</option>
+
+        </select>
+    </form>
+
+    <table id="dataDisplay">
+        <thead>
+            <tr>
+                <th>SNo</th>
+                <th>District</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody id="dataBody">
+            <!-- Data will be displayed here -->
+        </tbody>
+    </table>
+
+    <script>
+        function displayData() {
+            var selector = document.getElementById("dataSelector");
+            var selectedValue = selector.value;
+            var tableBody = document.getElementById("dataBody");
+
+            // Clear existing data in the table body
+            tableBody.innerHTML = "";
+
+            if (selectedValue === "data1") {
+                // Display Bagalkot
+                addRow(tableBody, 1, "Bagalkot Trust", "123-456-7890");
+                addRow(tableBody, 2, "Bagalkot NGO", "123-456-7890");
+            } else if (selectedValue === "data2") {
+                // Display Bellary
+                addRow(tableBody, 1, "Bellary Trust", "123-456-7890");
+                addRow(tableBody, 2, "Bellary NGO", "123-456-7890");
+            } else if (selectedValue === "data3") {
+                // Display Bangalore Rural
+                addRow(tableBody, 1, "Bangalore Rural Trust", "123-456-7890");
+                addRow(tableBody, 2, "Bangalore Rural NGO", "123-456-7890");
+            } else if (selectedValue === "data4") {
+                // Display Bangalore Urban
+                addRow(tableBody, 1, "Bangalore Urban Trust", "123-456-7890");
+                addRow(tableBody, 2, "Bangalore Urban NGO", "123-456-7890");
+            } else if (selectedValue === "data5") {
+                // Display Belagavi
+                addRow(tableBody, 1, "Belagavi Trust", "123-456-7890");
+                addRow(tableBody, 2, "Belagavi NGO", "123-456-7890");
+            } else if (selectedValue === "data6") {
+                // Display Bidar
+                addRow(tableBody, 1, "Bidar Trust", "123-456-7890");
+                addRow(tableBody, 2, "Bidar NGO", "123-456-7890");
+            } else if (selectedValue === "data7") {
+                // Display Bijapur
+                addRow(tableBody, 1, "Bijapur Trust", "123-456-7890");
+                addRow(tableBody, 2, "Bijapur NGO", "123-456-7890");
+            } else if (selectedValue === "data8") {
+                // Display Chamarajanagara
+                addRow(tableBody, 1, "Chamarajanagara Trust", "123-456-7890");
+                addRow(tableBody, 2, "Chamarajanagara NGO", "123-456-7890");
+            } else if (selectedValue === "data9") {
+                // Display Chikkaballapura
+                addRow(tableBody, 1, "Chikkaballapura Trust", "123-456-7890");
+                addRow(tableBody, 2, "Chikkaballapura NGO", "123-456-7890");
+            } else if (selectedValue === "data10") {
+                // Display Chikmagalur
+                addRow(tableBody, 1, "Chikmagalur Trust", "123-456-7890");
+                addRow(tableBody, 2, "Chikmagalur NGO", "123-456-7890");
+            } else if (selectedValue === "data11") {
+                // Display Chitradurga
+                addRow(tableBody, 1, "Chitradurga Trust", "123-456-7890");
+                addRow(tableBody, 2, "Chitradurga NGO", "123-456-7890");
+            } else if (selectedValue === "data12") {
+                // Display Dakshina Kannada
+                addRow(tableBody, 1, "Dakshina Kannada Trust", "123-456-7890");
+                addRow(tableBody, 2, "Dakshina Kannada NGO", "123-456-7890");
+            } else if (selectedValue === "data13") {
+                // Display Davanagere
+                addRow(tableBody, 1, "Davanagere Trust", "123-456-7890");
+                addRow(tableBody, 2, "Davanagere NGO", "123-456-7890");
+            } else if (selectedValue === "data14") {
+                // Display Dharwad
+                addRow(tableBody, 1, "Dharwad Trust", "123-456-7890");
+                addRow(tableBody, 2, "Dharwad NGO", "123-456-7890");
+            } else if (selectedValue === "data15") {
+                // Display Gadag
+                addRow(tableBody, 1, "Gadag Trust", "123-456-7890");
+                addRow(tableBody, 2, "Gadag NGO", "123-456-7890");
+            } else if (selectedValue === "data16") {
+                // Display Gulbarga
+                addRow(tableBody, 1, "Gulbarga Trust", "123-456-7890");
+                addRow(tableBody, 2, "Gulbarga NGO", "123-456-7890");
+            } else if (selectedValue === "data17") {
+                // Display Hassan
+                addRow(tableBody, 1, "Hassan Trust", "123-456-7890");
+                addRow(tableBody, 2, "Hassan NGO", "123-456-7890");
+            } else if (selectedValue === "data18") {
+                // Display Haveri
+                addRow(tableBody, 1, "Haveri Trust", "123-456-7890");
+                addRow(tableBody, 2, "Haveri NGO", "123-456-7890");
+            } else if (selectedValue === "data19") {
+                // Display Kodagu
+                addRow(tableBody, 1, "Kodagu Trust", "123-456-7890");
+                addRow(tableBody, 2, "Kodagu NGO", "123-456-7890");
+            } else if (selectedValue === "data20") {
+                // Display Kolar
+                addRow(tableBody, 1, "Kolar Trust", "123-456-7890");
+                addRow(tableBody, 2, "Kolar NGO", "123-456-7890");
+            } else if (selectedValue === "data21") {
+                // Display Koppal
+                addRow(tableBody, 1, "Koppal Trust", "123-456-7890");
+                addRow(tableBody, 2, "Koppal NGO", "123-456-7890");
+            } else if (selectedValue === "data22") {
+                // Display Mandya
+                addRow(tableBody, 1, "Mandya Trust", "123-456-7890");
+                addRow(tableBody, 2, "Mandya NGO", "123-456-7890");
+            } else if (selectedValue === "data23") {
+                // Display Mysore
+                addRow(tableBody, 1, "Mysore Trust", "123-456-7890");
+                addRow(tableBody, 2, "Mysore NGO", "123-456-7890");
+            } else if (selectedValue === "data24") {
+                // Display Raichur
+                addRow(tableBody, 1, "Raichur Trust", "123-456-7890");
+                addRow(tableBody, 2, "Raichur NGO", "123-456-7890");
+            } else if (selectedValue === "data25") {
+                // Display Ramanagara
+                addRow(tableBody, 1, "Ramanagara Trust", "123-456-7890");
+                addRow(tableBody, 2, "Ramanagara NGO", "123-456-7890");
+            } else if (selectedValue === "data26") {
+                // Display Shimoga
+                addRow(tableBody, 1, "Shimoga Trust", "123-456-7890");
+                addRow(tableBody, 2, "Shimoga NGO", "123-456-7890");
+            } else if (selectedValue === "data27") {
+                // Display Tumakuru
+                addRow(tableBody, 1, "Tumakuru Trust", "123-456-7890");
+                addRow(tableBody, 2, "Tumakuru NGO", "123-456-7890");
+            } else if (selectedValue === "data28") {
+                // Display Udupi
+                addRow(tableBody, 1, "Udupi Trust", "123-456-7890");
+                addRow(tableBody, 2, "Udupi NGO", "123-456-7890");
+            } else if (selectedValue === "data29") {
+                // Display Uttara Kannada
+                addRow(tableBody, 1, "Uttara Kannada Trust", "123-456-7890");
+                addRow(tableBody, 2, "Uttara Kannada NGO", "123-456-7890");
+            } else if (selectedValue === "data30") {
+                // Display Vijayanagara
+                addRow(tableBody, 1, "Vijayanagara Trust", "123-456-7890");
+                addRow(tableBody, 2, "Vijayanagara NGO", "123-456-7890");
+            } else if (selectedValue === "data31") {
+                // Display Yadgiri
+                addRow(tableBody, 1, "Yadgiri Trust", "123-456-7890");
+                addRow(tableBody, 2, "Yadgiri NGO", "123-456-7890");
+            }
+        }
+
+        function addRow(tableBody, SNo, District, Contact) {
+            var newRow = tableBody.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            cell1.innerHTML = SNo;
+            cell2.innerHTML = District;
+            cell3.innerHTML = Contact;
+        }
+    </script>
+
+</body>
+</html>
